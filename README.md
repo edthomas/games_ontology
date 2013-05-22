@@ -1,4 +1,4 @@
-games_ontology
-==============
+BusOntologyBrowser
+==================
 
-Trabalho de Tópicos 2
+College homework intended to allow browsing into our local public transport ontology
