@@ -1,0 +1,104 @@
+Para todos:
+prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
+
+
+1. Quem são os jogadores de uma determinada partida?
+
+select ?jogadores ?nome
+where {d:partida_cacheta d:temJogadores ?jogadores.
+       ?jogadores d:temNome ?nome}
+
+2.Quais são as regras de determinado jogo?
+
+select ?regras
+where {d:damas d:temRegras ?regras} 
+
+3.Quais são os jogos competitivos??
+
+select  ?j ?r
+where
+{
+?classes rdfs:subClassOf d:Jogos.
+?j  rdf:type   ?classes.
+?j d:ehCompetitivo true
+}
+
+4. Quais são os aparatos para se jogar determinado jogo?
+
+select ?aparatos
+where {d:damas d:temAparatos ?aparatos} 
+
+
+5. Qual o tipo de um determinado jogo?
+
+select  ?tipo
+where
+{
+?tipo rdfs:subClassOf d:Jogos.
+d:damas a ?tipo
+}
+
+genérico:
+
+select  ?tipo 
+where
+{
+?tipo rdfs:subClassOf d:Jogos.
+?j d:temNome "jogo de damas".
+?j a ?tipo 
+}
+
+6. Qual o nome do jogo?
+
+select ?nome
+where {d:damas d:temNome ?nome}
+
+7.Qual o número de jogadores de determinada partida? 
+
+select (count(?jogadores) as ?count)
+where {d:partida_qdb d:temJogadores ?jogadores} 
+
+
+8. Quais os objetivos de um determinado jogo?
+
+select ?objetivos
+where {d:damas d:temObjetivos ?objetivos} 
+
+9. Qual o vencedor de determinada partida?
+
+select ?vencedor ?nome
+where {d:partida_cacheta d:temVencedor ?vencedor.
+        ?vencedor d:temNome ?nome} 
+        
+10. Quem venceu mais partidas?
+
+select  ?j
+where
+{
+?p a ?Partida.
+?p d:temVencedor ?j.
+?j d:temNome "Oin".
+}
+
+11. Quais as partidas de um determinado jogo.
+
+select  ?p
+where
+{
+?p a ?Partida.
+?p d:temJogo ?j.
+?j d:temNome "jogo de xadrez".
+}
+
+
+
+bonus:
+Todas as instâncias de todos os jogos:
+
+select ?jogo
+where{
+?subclass rdfs:subClassOf :Jogos . 
+?jogo rdf:type   ?subclass.
+}
+
+

@@ -1,0 +1,24 @@
+1. Definir escopo,
+2. Definir propósito,
+3. Definir as questões de competência.
+4. Fontes de conhecimento   - definições
+                            - relações
+                            - instâncias
+
+1. Escopo:
+    Ontologia sobre jogos em geral.
+2. Propósito:
+    Organizar e definir conceitos sobre as categorias de jogos, suas
+    regras e suas particularidades.
+
+3. Questões de competência:
+    - Quais são os propósitos gerais dos jogos?
+    - Qual o número de jogadores?
+    - Quais são as regras?
+    - É um jogo competitivo ou cooperativo?
+    - É necessário algum aparato para jogar?
+    - Qual a idade indicada para tal jogo?
+    - Qual o tipo do jogo?
+    - Qual o nome do jogo?
+
+

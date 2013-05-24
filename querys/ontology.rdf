@@ -1,0 +1,681 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://ontokem.egc.ufsc.br/ontologia#"
+     xml:base="file:/home/eduardo/1Sem/topicos/ontologia_jogos_em_geral424.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    <xsd:any rdf:about="http://ontokem.egc.ufsc.br/ontologia#any_1"/>
+    <xsd:any rdf:about="http://ontokem.egc.ufsc.br/ontologia#any_2"/>
+    <xsd:any rdf:about="http://ontokem.egc.ufsc.br/ontologia#any_3"/>
+    <xsd:any rdf:about="http://ontokem.egc.ufsc.br/ontologia#any_4">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      50
+    &lt;/p&gt;</rdfs:comment>
+    </xsd:any>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Aparatos">
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: &#201; uma classe que representa um ou mais objetos utilizados para a realiza&#231;&#227;o de um jogo.</rdfs:comment>
+    </owl:Class>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#baralho">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Baralho padr&amp;#227;o 52 cartas utilizado na maioria dos jogos.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Baralho</temNome>
+    </Aparatos>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#baralho_magic">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Baralho utilizado em magic, possui 60 cartas.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string"
+            >baralho de magic</temNome>
+    </Aparatos>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#baralho_yugioh">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Baralho de Yu-Gi-Oh!, possui 40 cartas
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string"
+            >Baralho Yu-Gi-Oh!</temNome>
+    </Aparatos>
+    <Cartas rdf:about="http://ontokem.egc.ufsc.br/ontologia#cacheta">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de cacheta.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#baralho"/>
+        <temNome rdf:datatype="&xsd;string">Cacheta</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >Acumular 3 cartas de acordo com as regras.</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >Um trinca &amp;#233; um conjunto de tr&amp;#234;s cartas com o mesmo valor, ou do mesmo naipe
+em uma sequencia direta.</temRegras>
+    </Cartas>
+    <Cartas rdf:about="http://ontokem.egc.ufsc.br/ontologia#canastra">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Canastra.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#baralho"/>
+        <temNome rdf:datatype="&xsd;string">Canastra</temNome>
+        <temObjetivos xml:lang="pt"
+            >Alcan&amp;#231;ar o n&amp;#250;mero de pontos estabelecido no comum acordo entre os 
+    jogadores no in&amp;#237;cio da partida.</temObjetivos>
+        <temObjetivos rdf:datatype="&xsd;string"></temObjetivos>
+        <temRegras xml:lang="pt"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Cada jogador recebe 12 cartas no in&amp;#237;cio da partida.
+    &lt;/p&gt;</temRegras>
+        <temRegras xml:lang="pt"
+            >O objetivo &amp;#233; acumular canastras, uma canastra consiste de uma sequ&amp;#234;ncia de 
+    sete cartas iguais, ou uma sequencia do mesmo naipe.</temRegras>
+    </Cartas>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Cartas">
+        <rdfs:subClassOf rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Subclasse da classe Jogo que  representa um jogo onde se utiliza de um ou mais baralhos compostos por v&#225;rias cartas.</rdfs:comment>
+    </owl:Class>
+    <Dados rdf:about="http://ontokem.egc.ufsc.br/ontologia#craps">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Craps.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#dados"/>
+        <temNome rdf:datatype="&xsd;string">Craps</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >Acertar a aposta e ganhar o pr&#234;mio.</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >Apostar dinheiro em uma combina&#231;&#227;o</temRegras>
+    </Dados>
+    <Dados rdf:about="http://ontokem.egc.ufsc.br/ontologia#dado_de_ouro">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de dados de ouro.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#dados"/>
+        <temNome rdf:datatype="&xsd;string">Dado de Ouro</temNome>
+        <temObjetivos xml:lang="pt"
+            >Para se saber quem joga primeiro, cada jogador lan&#231;a o dado cada um por sua vez seguindo em sentido hor&#225;rio e o que conseguir maior pontua&#231;&#227;o come&#231;ar&#225; o jogo. Esse jogador lan&#231;a o dado seguido dos outros jogadores no sentido hor&#225;rio. Quando todos tiverem lan&#231;ado o dado, chega ao fim uma rodada.</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >Para se saber quem joga primeiro, cada jogador lan&#231;a o dado cada um por sua vez seguindo em sentido hor&#225;rio e o que conseguir maior pontua&#231;&#227;o come&#231;ar&#225; o jogo. Esse jogador lan&#231;a o dado seguido dos outros jogadores no sentido hor&#225;rio. Quando todos tiverem lan&#231;ado o dado, chega ao fim uma rodada. </temRegras>
+    </Dados>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Dados">
+        <rdfs:subClassOf rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Subclasse da classe Jogo que representa um Jogo onde se rolam os dados a espera de algum resultado que favore&#231;a alguma das partes.</rdfs:comment>
+    </owl:Class>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#dados">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Dados de 6 faces padr&amp;#227;o.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string"
+            >Dados para Jogos</temNome>
+    </Aparatos>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#dados_rpg">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Conjunto de dados utilizados em RPG.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Dados RPG</temNome>
+    </Aparatos>
+    <Tabuleiro rdf:about="http://ontokem.egc.ufsc.br/ontologia#damas">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de damas.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#tabuleiro_damas"/>
+        <temNome rdf:datatype="&xsd;string">jogo de damas</temNome>
+        <temObjetivos xml:lang="pt"
+            >capturar todas as pe&#231;as do advers&#225;rio</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >as pe&#231;as se movem somente na diagonal</temRegras>
+    </Tabuleiro>
+    <Jogos rdf:about="http://ontokem.egc.ufsc.br/ontologia#dAndD">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">false</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Lend&amp;#225;rio Jogo de RPG.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#baralho"/>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#dados_rpg"/>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#pe&#231;as"/>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#tabuleiro_rpg"/>
+        <temNome rdf:datatype="&xsd;string"
+            >Dungeons And Dragons</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >Seguir a narrativa do Mestre do Jogo</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >Seguir o jogador chamado de mestre</temRegras>
+    </Jogos>
+    <Mesa rdf:about="http://ontokem.egc.ufsc.br/ontologia#domino">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Divertido jogo de domin&amp;#243;.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#pecas_domino"/>
+        <temNome rdf:datatype="&xsd;string">Domin&#243;</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      O jogador deve se livrar de todas as pe&amp;#231;as em sua m&amp;#227;o.
+    &lt;/p&gt;</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Os jogadores alternam a jogada, durante cada jogada os jogadores 
+      combinam suas pe&amp;#231;as da m&amp;#227;o com o fim da linha das pe&amp;#231;as na mesa.
+    &lt;/p&gt;</temRegras>
+    </Mesa>
+    <owl:DatatypeProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#ehCompetitivo">
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: &#233; uma propriedade de dados  da classe tipo que representa um tipo de jogo cuja ess&#234;ncia &#233; estimular a competi&#231;&#227;o entre os participantes.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#fichas">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Fichas Usadas no Poquer.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Fichas</temNome>
+    </Aparatos>
+    <Tabuleiro rdf:about="http://ontokem.egc.ufsc.br/ontologia#gam&#227;o">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de gam&amp;#227;o.
+    &lt;/p&gt;</rdfs:comment>
+    </Tabuleiro>
+    <Jogadores rdf:about="http://ontokem.egc.ufsc.br/ontologia#jogador1">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Um dos doze companheiros de Thorin Oakshield e Bilbo na aventura de Smaug.</rdfs:comment>
+        <temIdade rdf:datatype="&xsd;int">80</temIdade>
+        <temNome rdf:datatype="&xsd;string">Oin</temNome>
+    </Jogadores>
+    <Jogadores rdf:about="http://ontokem.egc.ufsc.br/ontologia#jogador2">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Um dos doze companheiros de Thorin Oakshield e Bilbo na aventura de 
+      Smaug.
+    &lt;/p&gt;</rdfs:comment>
+        <temIdade rdf:datatype="&xsd;int">90</temIdade>
+        <temNome rdf:datatype="&xsd;string">Gloin</temNome>
+    </Jogadores>
+    <Jogadores rdf:about="http://ontokem.egc.ufsc.br/ontologia#jogador3">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Um dos doze companheiros de Thorin Oakshield e Bilbo na aventura de 
+      Smaug.
+    &lt;/p&gt;</rdfs:comment>
+        <temIdade rdf:datatype="&xsd;int">100</temIdade>
+        <temNome rdf:datatype="&xsd;string">Bifur</temNome>
+    </Jogadores>
+    <Jogadores rdf:about="http://ontokem.egc.ufsc.br/ontologia#jogador4">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Um dos doze companheiros de Thorin Oakshield e Bilbo na aventura de 
+      Smaug.
+    &lt;/p&gt;</rdfs:comment>
+        <temIdade rdf:datatype="&xsd;int">110</temIdade>
+        <temNome rdf:datatype="&xsd;string">Bufur</temNome>
+    </Jogadores>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Jogadores">
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Classe que representa um participante de uma partida de um jogo.</rdfs:comment>
+    </owl:Class>
+    <Jogadores rdf:about="http://ontokem.egc.ufsc.br/ontologia#Jogadores_3"/>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Jogos">
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: &#200; uma classe que representa o exerc&#237;cio ou divertimento sujeito a certas regras.</rdfs:comment>
+    </owl:Class>
+    <Cartas rdf:about="http://ontokem.egc.ufsc.br/ontologia#magic">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Magic the Gathering.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#baralho_magic"/>
+        <temNome rdf:datatype="&xsd;string">Magic</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >Cada jogador constr&amp;#243;i seu baralho com o objetivo de derrotar o baralho do 
+    advers&amp;#225;rio acabando com seus pontos de vida</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >Funciona atrav&amp;#233;s da compara&amp;#231;&amp;#227;o dos atributos das cartas.</temRegras>
+    </Cartas>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Mesa">
+        <rdfs:subClassOf rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Subclasse da classe Jogo que representa  qualquer jogo em que os elementos do jogo est&#227;o confinados a uma &#225;rea pequena e que exigem pouco esfor&#231;o f&#237;sico, geralmente a simples coloca&#231;&#227;o, pegar e mover as pe&#231;as do jogo.</rdfs:comment>
+    </owl:Class>
+    <Cartas rdf:about="http://ontokem.egc.ufsc.br/ontologia#paciencia">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">false</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Paci&amp;#234;ncia.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#baralho"/>
+        <temNome rdf:datatype="&xsd;string">Paciencia</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Empilhar todas as cartas em quatro pilhas, uma para cada naipe, as 
+      pilhas s&amp;#227;o ordenadas por valor.
+    &lt;/p&gt;</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Remover as cartas das pilhas em ordem e coloc&amp;#225;-las na pilha dos naipes.
+    &lt;/p&gt;</temRegras>
+    </Cartas>
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partida_cacheta">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Apenas mais uma partida de cacheta.
+    &lt;/p&gt;</rdfs:comment>
+        <temDuração rdf:datatype="&xsd;time">11:00:06</temDuração>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador2"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador3"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador4"/>
+        <temJogo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#cacheta"/>
+        <temNumMinimoJogadores rdf:datatype="&xsd;int">4</temNumMinimoJogadores>
+        <temVencedor rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+    </Partidas>
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partida_canastra">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Apenas mais uma partida de canastra.
+    &lt;/p&gt;</rdfs:comment>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador2"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador3"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador4"/>
+        <temJogo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#canastra"/>
+        <temNumMinimoJogadores rdf:datatype="&xsd;int">2</temNumMinimoJogadores>
+        <temVencedor rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador3"/>
+    </Partidas>
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partida_gam&#227;o">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Uma partida de gam&#227;o
+&lt;/p&gt;</rdfs:comment>
+        <temDuração rdf:datatype="&xsd;time">14:01:18</temDuração>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador2"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador4"/>
+        <temJogo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#gam&#227;o"/>
+        <temNumMinimoJogadores rdf:datatype="&xsd;int">0</temNumMinimoJogadores>
+        <temVencedor rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador2"/>
+    </Partidas>
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partida_qdb">
+        <rdfs:comment xml:lang="pt"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Uma &amp;#225;rdua partida entre dois &amp;#225;vidos competidores.
+    &lt;/p&gt;</rdfs:comment>
+        <temDuração rdf:datatype="&xsd;time">11:24:23</temDuração>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador2"/>
+        <temJogo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#queda_de_braco"/>
+        <temNumMinimoJogadores rdf:datatype="&xsd;int">2</temNumMinimoJogadores>
+        <temVencedor rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+    </Partidas>
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partida_war">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Partida de war.
+    &lt;/p&gt;</rdfs:comment>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+        <temJogo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#war"/>
+        <temNumMinimoJogadores rdf:datatype="&xsd;int">2</temNumMinimoJogadores>
+        <temVencedor rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador4"/>
+    </Partidas>
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partida_xadrez">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Partida de xadrez.
+    &lt;/p&gt;</rdfs:comment>
+        <temDuração rdf:datatype="&xsd;time">11:20:56</temDuração>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador4"/>
+        <temJogo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#xadrez"/>
+        <temNumMinimoJogadores rdf:datatype="&xsd;int">2</temNumMinimoJogadores>
+        <temVencedor rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+    </Partidas>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Partidas">
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: &#201; uma classe que representa uma sess&#227;o de um jogo.</rdfs:comment>
+    </owl:Class>
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partidas_magick">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Partida de magick.
+    &lt;/p&gt;</rdfs:comment>
+        <temDuração rdf:datatype="&xsd;time">14:03:13</temDuração>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+        <temJogadores rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador4"/>
+        <temJogo rdf:resource="http://ontokem.egc.ufsc.br/ontologia#magic"/>
+        <temNumMinimoJogadores rdf:datatype="&xsd;int">0</temNumMinimoJogadores>
+        <temVencedor rdf:resource="http://ontokem.egc.ufsc.br/ontologia#jogador1"/>
+    </Partidas>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#pecas_domino">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Conjunto de 28 pe&amp;#231;as utilizadas no jogo de domin&amp;#243;.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Pe&#231;as de domin&#243;</temNome>
+    </Aparatos>
+    <Mesa rdf:about="http://ontokem.egc.ufsc.br/ontologia#pega_varetas">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Pega varetas.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#varetas"/>
+        <temNome rdf:datatype="&xsd;string">Pega Varetas</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Fazer mais pontos que o advers&amp;#225;rio.
+    &lt;/p&gt;</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      O jogador deve usar varetas para remover uma vareta de cada vez, das que 
+      est&amp;#227;o espalhadas na mesa sem perturbar as outras, cada cor de vareta tem 
+      um valor, no final, o jogador com a maior somat&amp;#243;ria de pontos ganha a 
+      partida.
+    &lt;/p&gt;</temRegras>
+    </Mesa>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#pe&#231;as">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Pe&amp;#231;as gen&amp;#233;ricas utilizadas em v&amp;#225;rios jogos de tabuleiro.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Pe&#231;as</temNome>
+    </Aparatos>
+    <Cartas rdf:about="http://ontokem.egc.ufsc.br/ontologia#poker">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Poquer.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Poker</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Ganhar todas as fichas da mesa atrav&amp;#233;s de apostas.
+    &lt;/p&gt;</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      No in&amp;#237;cio de cada turno s&amp;#227;o feitas as apostas, em seguida as cartas s&amp;#227;o 
+      viradas,
+    &lt;/p&gt;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;
+      a cada carta virada pode ser feita uma nova rodada de apostas.
+    &lt;/p&gt;</temRegras>
+    </Cartas>
+    <Mesa rdf:about="http://ontokem.egc.ufsc.br/ontologia#queda_de_braco">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Disputa de queda de bra&amp;#231;o.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Queda de Bra&#231;o.</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Derrotar o oponente atrav&amp;#233;s de for&amp;#231;a bruta.
+    &lt;/p&gt;</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Os jogadores cruzam as m&amp;#227;os e as apoiam em uma mesa, cada um faz um 
+      esfor&amp;#231;o para empurrar a m&amp;#227;o do advers&amp;#225;rio contra a mesa.
+    &lt;/p&gt;</temRegras>
+    </Mesa>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#rel&#243;gio">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Rel&amp;#243;gio cron&amp;#244;metro utilizado na partida de xadrez.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Rel&#243;gio</temNome>
+    </Aparatos>
+    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Tabuleiro">
+        <rdfs:subClassOf rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Subclasse da classe Jogo que representa Jogos onde s&#227;o usados tabuleiros como ferramenta central onde s&#227;o movidas pe&#231;as.</rdfs:comment>
+    </owl:Class>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#tabuleiro_damas">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Tabuleiro de Damas, similar ao de xadrez.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string"
+            >Tabuleiro de Damas</temNome>
+    </Aparatos>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#tabuleiro_gamao">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Tabuleiro utilizado no jogo gam&amp;#227;o.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string"
+            >Tabuleiro de Gam&#227;o</temNome>
+    </Aparatos>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#tabuleiro_rpg">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Tabuleiro utilizado no jogo RPG.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Tabuleiro D&amp;D</temNome>
+    </Aparatos>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#tabuleiro_war">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Tabuleiro utilizado no jogo War.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string"
+            >Tabuleiro de War</temNome>
+    </Aparatos>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#tabuleiro_xadrez">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Tabuleiro de xadrez.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string"
+            >Tabuleiro de Xadrez</temNome>
+    </Aparatos>
+    <owl:ObjectProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temAparatos">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Nos jogos podem ser usados aparatos, como mesas, pe&amp;#231;as, cartas, entre 
+      outros.
+    &lt;/p&gt;</rdfs:comment>
+        <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Aparatos"/>
+    </owl:ObjectProperty>
+    <owl:DatatypeProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temDura&#231;&#227;o">
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Partidas"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Tipo de dados da classe partida que indica o tempo decorrido de uma partida.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;time"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temIdade">
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogadores"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: &#200; um tipo de dado da classe jogo que representa a idade m&#237;nima para se jogar.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temJogadores">
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Partidas"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Pessoas que participam do jogo.
+    &lt;/p&gt;</rdfs:comment>
+        <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogadores"/>
+    </owl:ObjectProperty>
+    <owl:FunctionalProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temJogo">
+        <rdf:type rdf:resource="&owl;ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Partidas"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Cada partida tem um jogo associado.
+    &lt;/p&gt;</rdfs:comment>
+        <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+    </owl:FunctionalProperty>
+    <owl:DatatypeProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temNome">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Aparatos"/>
+                    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Cartas"/>
+                    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Dados"/>
+                    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Jogadores"/>
+                    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+                    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Mesa"/>
+                    <owl:Class rdf:about="http://ontokem.egc.ufsc.br/ontologia#Tabuleiro"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Propriedade de dados designa os seres, coisas, qualidades, estados ou a&#231;&#245;es.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temNumMinimoJogadores">
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Partidas"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Propriedade de dados que representa o lim&#237;te m&#237;nimo e m&#225;ximo de jogadores participantes de uma partida de um jogo.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temObjetivos">
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: &#201; uma propriedade de dados da classe Jogo que representa a meta a ser alcan&#231;ada pelos jogadores para que possam ser definidos os vencedores do jogo.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temRegras">
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogos"/>
+        <rdfs:comment xml:lang="pt"
+            >DEFINI&#199;&#195;O: Propriedade de dados da classe jogo que representa as restri&#231;&#245;es que devem ser seguidas pelos jogadores.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="http://ontokem.egc.ufsc.br/ontologia#temVencedor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Partidas"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      No final de cada partida existe um ou v&amp;#225;rios jogadores vencedores.
+    &lt;/p&gt;</rdfs:comment>
+        <rdfs:range rdf:resource="http://ontokem.egc.ufsc.br/ontologia#Jogadores"/>
+    </owl:ObjectProperty>
+    <Cartas rdf:about="http://ontokem.egc.ufsc.br/ontologia#truco">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Truco.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#baralho"/>
+        <temNome rdf:datatype="&xsd;string">Truco</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Fazer 12 pontos
+    &lt;/p&gt;</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      A cada rodada as cartas s&amp;#227;o comparadas, o jogador com a melhor carta
+    &lt;/p&gt;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;
+      vence aquela rodada, e inicia a pr&amp;#243;xima, no caso do jogador estar 
+      confiante,
+    &lt;/p&gt;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;
+      o mesmo pode gritar &apos;TRUCO&apos; em uma carta jogada ou n&amp;#227;o, no caso de sua 
+    &lt;/p&gt;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;
+      vit&amp;#243;ria, o mesmo ganha 3 pontos, caso contr&amp;#225;rio, perde 3 pontos.
+    &lt;/p&gt;</temRegras>
+    </Cartas>
+    <Aparatos rdf:about="http://ontokem.egc.ufsc.br/ontologia#varetas">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Conjunto de varetas utilizado no jogo Pega Varetas.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">Varetas</temNome>
+    </Aparatos>
+    <Tabuleiro rdf:about="http://ontokem.egc.ufsc.br/ontologia#war">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de war.
+    &lt;/p&gt;</rdfs:comment>
+    </Tabuleiro>
+    <Tabuleiro rdf:about="http://ontokem.egc.ufsc.br/ontologia#xadrez">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de xadrez.
+    &lt;/p&gt;</rdfs:comment>
+        <temNome rdf:datatype="&xsd;string">jogo de xadrez</temNome>
+    </Tabuleiro>
+    <rdfs:Class rdf:about="&xsd;any"/>
+    <Dados rdf:about="http://ontokem.egc.ufsc.br/ontologia#yahtzee">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Yahtzee.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#dados"/>
+        <temNome rdf:datatype="&xsd;string"
+            >Yahtzee ou General</temNome>
+        <temObjetivos xml:lang="pt"
+            >Um jogo de General consiste de um certo n&amp;#250;mero de rodadas: em cada uma 
+    delas, cada jogador, por sua vez, joga os dados e, conforme o resultado 
+    obtido, marca uma das jogadas previstas em sua cartela. Uma vez marcada, 
+    aquela jogada n&amp;#227;o pode ser repetida pelo mesmo jogador at&amp;#233; o final da 
+    partida.</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >Um jogo de General consiste de um certo n&#250;mero de rodadas: em cada uma delas, cada jogador, por sua vez, joga os dados e, conforme o resultado obtido, marca uma das jogadas previstas em sua cartela. Uma vez marcada, aquela jogada n&#227;o pode ser repetida pelo mesmo jogador at&#233; o final da partida.</temRegras>
+    </Dados>
+    <Cartas rdf:about="http://ontokem.egc.ufsc.br/ontologia#yugioh">
+        <ehCompetitivo rdf:datatype="&xsd;boolean">true</ehCompetitivo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Jogo de Yu-Gi-Oh!.
+    &lt;/p&gt;</rdfs:comment>
+        <temAparatos rdf:resource="http://ontokem.egc.ufsc.br/ontologia#baralho_yugioh"/>
+        <temNome rdf:datatype="&xsd;string">Yu-Gi-Oh!</temNome>
+        <temObjetivos rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Acabar com os pontos de vida do advers&amp;#225;rio.
+    &lt;/p&gt;</temObjetivos>
+        <temRegras rdf:datatype="&xsd;string"
+            >&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Atrav&amp;#233;s da compara&amp;#231;&amp;#227;o das cartas a diferen&amp;#231;a entre os pontos de ataque 
+      das cartas s&amp;#227;o o dano recebido pelo jogador sendo atacado. Caso a carta 
+      esteja
+    &lt;/p&gt;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;
+      em modo de defesa, se a carta for destru&amp;#237;da, nada acontece com o atacado,
+    &lt;/p&gt;
+    &lt;p style=&quot;margin-top: 0&quot;&gt;
+      caso contr&amp;#225;rio, a diferen&amp;#231;a entre os pontos de defesa da carta atacada e 
+      da carta atacante s&amp;#227;o deduzidos dos pontos de vida do jogador atacando.
+    &lt;/p&gt;</temRegras>
+    </Cartas>
+</rdf:RDF>
