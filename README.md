@@ -1,4 +1,1 @@
-BusOntologyBrowser
-==================
-
-College homework intended to allow browsing into our local public transport ontology
+Ontology about games, board games, card games and stuff
