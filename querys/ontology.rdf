@@ -368,7 +368,7 @@ em uma sequencia direta.</temRegras>
         <rdfs:comment xml:lang="pt"
             >DEFINI&#199;&#195;O: &#201; uma classe que representa uma sess&#227;o de um jogo.</rdfs:comment>
     </owl:Class>
-    <Partidas rdf:about="http://ontokem.egc.ufsc.br/ontologia#partidas_magick">
+    <Partidas rdf:about="http://ontokem.egc.ufsc.br/oxadrezntologia#partidas_magick">
         <rdfs:comment rdf:datatype="&xsd;string"
             >&lt;p style=&quot;margin-top: 0&quot;&gt;
       Partida de magick.

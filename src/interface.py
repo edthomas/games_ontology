@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from controller import *
 
 import sys
 
@@ -26,10 +27,13 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_GamesOntology(QtGui.QMainWindow):
-    def __init__(self):
+    def __init__(self, control):
+        print 'fudeu'
         QtGui.QMainWindow.__init__(self)
         #self.ui = Ui_GamesOntology()
+        self.control = control
         self.setupUi(self)
+        self.show()
     
     def setupUi(self, GamesOntology):
         GamesOntology.setObjectName(_fromUtf8("GamesOntology"))
@@ -59,9 +63,14 @@ class Ui_GamesOntology(QtGui.QMainWindow):
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
         GamesOntology.setStatusBar(self.statusbar)
         self.menubar.addAction(self.menuAbout.menuAction())
-
+        
+        self.pushButton.clicked.connect(self.control.get_pergunta)
+        for i in range(1, 12):
+            self.comboBox.addItem(str(i))
+    
         self.retranslateUi(GamesOntology)
         QtCore.QMetaObject.connectSlotsByName(GamesOntology)
+        
 
     def retranslateUi(self, GamesOntology):
         GamesOntology.setWindowTitle(_translate("GamesOntology", "MainWindow", None))
@@ -69,11 +78,11 @@ class Ui_GamesOntology(QtGui.QMainWindow):
         self.menuAbout.setTitle(_translate("GamesOntology", "About", None))
 
 
-if __name__ == '__main__':
-    app = QtGui.QApplication(sys.argv)
-    window = Ui_GamesOntology()
-    window.show()
-    sys.exit(app.exec_())
+#~ if __name__ == '__main__':
+    #~ app = QtGui.QApplication(sys.argv)
+    #~ window = Ui_GamesOntology()
+    #~ window.show()
+    #~ sys.exit(app.exec_())
 
 
 

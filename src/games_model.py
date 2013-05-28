@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from Model import Model
+#from Model import Model
 
 import rdflib
 import rdfextras
@@ -8,30 +8,30 @@ import rdfextras
 class Games_Model(object):
     
     
-    def get_jogadores_por_partida(self, partida):
+    def get_jogadores_por_partida(self, partida, g):
         result = g.query("""
-        prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
-        select ?jogadores ?nome
-        where {d:"""+partida+"""+d:temJogadores ?jogadores.
-        ?jogadores d:temNome ?nome}
-        """)
-    
+prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
+select ?jogadores ?nome
+where {d:"""+partida+""" d:temJogadores ?jogadores.
+       ?jogadores d:temNome ?nome}
+""")    
+        self.print_resultis(result)     
         return result
         
-    def get_regras_jogo(self, jogo):
+    def get_regras_jogo(self, jogo, g):
+        results = g.query("""
+prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
+select ?regras
+where {d:"""+jogo+""" d:temRegras ?regras}
+""") 
+        self.print_resultis(results)     
+        return results
+        
+        
+    def listar_competitivos(self, g):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
-        select ?regras
-        where {d:"""+jogo+"""d:temRegras ?regras} 
-        """)
-        
-        return result
-        
-        
-    def listar_competitivos(self):
-        result = g.query("""
-        prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
-        select  ?j ?r
+        select  ?j
         where
         {
         ?classes rdfs:subClassOf d:Jogos.
@@ -39,6 +39,7 @@ class Games_Model(object):
         ?j d:ehCompetitivo true
         }""")
         
+        self.print_resultis(result)     
         return result
         
     
@@ -49,6 +50,7 @@ class Games_Model(object):
         where {d:"""+jogo+""" d:temAparatos ?aparatos} 
         """) 
         
+        self.print_resultis(result)     
         return result
     
     def get_nome_jogo(self, jogo):
@@ -58,6 +60,7 @@ class Games_Model(object):
         where {d:"""+jogo+""" d:temNome ?nome}
         """)
         
+        self.print_resultis(result)     
         return result
     
     def get_num_jogadores_partida(self, partida):
@@ -67,6 +70,7 @@ class Games_Model(object):
         where {d:"""+partida+""" d:temJogadores ?jogadores} 
         """)
         
+        self.print_resultis(result)     
         return result
         
         
@@ -77,16 +81,19 @@ class Games_Model(object):
         where {d:"""+jogo+""" d:temObjetivos ?objetivos} 
         """)
         
+        self.print_resultis(result)     
         return result
         
         
     def get_vencedor_partida(self, partida):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
-        where {d:"""+partida"""+ d:temVencedor ?vencedor.
+        where {d:"""+partida+"""+ d:temVencedor ?vencedor.
         ?vencedor d:temNome ?nome} 
         """)
         
+        self.print_resultis(result)     
+        return result
         
     def get_maior_vencedor(self, nome_jogador):
         result = g.query("""
@@ -98,6 +105,7 @@ class Games_Model(object):
         ?j d:temNome """+nome_jogador+""".}
         """)
         
+        self.print_resultis(result)     
         return result
 
     def get_partidas_jogo(self, nome_jogo):
@@ -110,9 +118,12 @@ class Games_Model(object):
         ?j d:temNome """+nome_jogo+""".}
         """)
         
+        self.print_resultis(result)     
         return result
         
-        
+    def print_resultis(self,r):
+        for item in r:
+            print item
     
 		
 		
