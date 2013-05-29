@@ -13,7 +13,7 @@ where {d:partida_cacheta d:temJogadores ?jogadores.
 select ?regras
 where {d:damas d:temRegras ?regras} 
 
-3.Quais são os jogos competitivos??
+3.Quais são os jogos competitivos?
 
 select  ?j ?r
 where
