@@ -43,7 +43,7 @@ where {d:"""+jogo+""" d:temRegras ?regras}
         return result
         
     
-    def get_aparatos(self, jogo):
+    def get_aparatos(self, jogo, g):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
         select ?aparatos
@@ -53,7 +53,7 @@ where {d:"""+jogo+""" d:temRegras ?regras}
         self.print_resultis(result)     
         return result
     
-    def get_nome_jogo(self, jogo):
+    def get_nome_jogo(self, jogo, g):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
         select ?nome
@@ -63,18 +63,18 @@ where {d:"""+jogo+""" d:temRegras ?regras}
         self.print_resultis(result)     
         return result
     
-    def get_num_jogadores_partida(self, partida):
+    def get_num_jogadores_partida(self, partida, g):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
-        select (count(?jogadores) as ?count)
+        select ?jogadores
         where {d:"""+partida+""" d:temJogadores ?jogadores} 
-        """)
+        """) 
+        #self.print_resultis(result)
+        print len(result)     
+        return len(result)
         
-        self.print_resultis(result)     
-        return result
         
-        
-    def get_objetivos_jogo(self, jogo):
+    def get_objetivos_jogo(self, jogo, g):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
         select ?objetivos
@@ -85,37 +85,46 @@ where {d:"""+jogo+""" d:temRegras ?regras}
         return result
         
         
-    def get_vencedor_partida(self, partida):
+    def get_vencedor_partida(self, partida, g):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
-        where {d:"""+partida+"""+ d:temVencedor ?vencedor.
+        select ?nome
+        where {d:"""+partida+""" d:temVencedor ?vencedor.
         ?vencedor d:temNome ?nome} 
         """)
         
         self.print_resultis(result)     
         return result
         
-    def get_maior_vencedor(self, nome_jogador):
+    def get_maior_vencedor(self, g):
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
         select  ?j
         where {
         ?p a ?Partida.
         ?p d:temVencedor ?j.
-        ?j d:temNome """+nome_jogador+""".}
+        ?j d:temNome ?nome.}
         """)
         
         self.print_resultis(result)     
         return result
 
-    def get_partidas_jogo(self, nome_jogo):
+    def get_partidas_jogo(self, jogo, g):
+        #~ result = g.query("""
+#~ prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
+#~ select  ?p
+#~ where {
+#~ ?p a ?Partida.
+#~ ?p d:temJogo ?j.
+#~ ?j d:temNome """+nome_jogo+""".}
+#~ """)
         result = g.query("""
         prefix d: <http://ontokem.egc.ufsc.br/ontologia#>
         select  ?p
         where {
         ?p a ?Partida.
         ?p d:temJogo ?j.
-        ?j d:temNome """+nome_jogo+""".}
+        ?j d:temNome "jogo de xadrez".}
         """)
         
         self.print_resultis(result)     

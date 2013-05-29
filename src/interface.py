@@ -7,10 +7,12 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+import sys
+
 from controller import *
 
-import sys
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -52,6 +54,9 @@ class Ui_GamesOntology(QtGui.QMainWindow):
         self.comboBox = QtGui.QComboBox(self.centralwidget)
         self.comboBox.setGeometry(QtCore.QRect(10, 50, 76, 29))
         self.comboBox.setObjectName(_fromUtf8("comboBox"))
+        self.label = QtGui.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(20, 10, 361, 31))
+        self.label.setObjectName(_fromUtf8("label"))
         GamesOntology.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(GamesOntology)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 514, 27))
@@ -65,10 +70,13 @@ class Ui_GamesOntology(QtGui.QMainWindow):
         self.menubar.addAction(self.menuAbout.menuAction())
         
         self.pushButton.clicked.connect(self.control.get_pergunta)
-        for i in range(1, 12):
+        for i in range(1, 11):
             self.comboBox.addItem(str(i))
     
+        #self.label.connect(self.comboBox, SIGNAL(currentIndexChanged(QString)), label, SLOT(setText('gay1')))
+        QObject.connect(self.comboBox, SIGNAL('currentIndexChanged(int)'),self.control.change_text)
         self.retranslateUi(GamesOntology)
+        
         QtCore.QMetaObject.connectSlotsByName(GamesOntology)
         
 
