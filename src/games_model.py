@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 #from Model import Model
 
 import rdflib
@@ -131,10 +131,11 @@ where {d:"""+jogo+""" d:temRegras ?regras}
         return result
         
     def print_resultis(self,r):
+        #~ print r(0).toPython()
         for item in r:
-            print item
+            print item[0].toPython()
     
-		
+    
 		
 		
 		

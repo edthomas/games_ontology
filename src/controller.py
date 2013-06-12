@@ -21,10 +21,10 @@ class Controller(object):
         rdfextras.registerplugins()
         self.g = rdflib.Graph()
         self.g.parse("../querys/ontology.rdf")
-        self.listapergunta = ['','Quem são os jogadores de uma determinada partida?','Quais são as regras de determinado jogo?',
-        'Quais são os jogos competitivos?','Quais são os aparatos para se jogar determinado jogo?',
-        'Qual o tipo de um determinado jogo?','Qual o número de jogadores de determinada partida?','Quais os objetivos de um determinado jogo?',
-        'Qual o vencedor de determinada partida?','Quem venceu mais partidas?','Quais as partidas de um determinado jogo.']
+        self.listapergunta = ['','Quem sao os jogadores de uma determinada partida?','Quais sao as regras de determinado jogo?',
+        'Quais sao os jogos competitivos?','Quais sao os aparatos para se jogar determinado jogo?',
+        'Qual o tipo de um determinado jogo?','Qual o numero de jogadores de determinada partida?','Quais os objetivos de um determinado jogo?',
+        'Qual o vencedor de determinada partida?','Quem venceu mais partidas?','Quais as partidas de um determinado jogo?']
         
         self.model = Games_Model()
 
@@ -37,44 +37,69 @@ class Controller(object):
         
         print option
         
-        #~ if self.window.comboBox.currentIndexChanged() != -1 :
-            #~ print 'lkjlkjklj'
         if option == '1':
-            #~ self.window.label.setText(self.listapergunta[1])
-            self.model.get_jogadores_por_partida(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_jogadores_por_partida(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '2':
-            self.model.get_regras_jogo(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_regras_jogo(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '3':        
-            #self.lineEdit
+            self.window.listWidget.clear()
             self.window.lineEdit.setEnabled(False)
-            self.model.listar_competitivos(self.g)
+            res = self.model.listar_competitivos(self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
         
         elif option == '4':
-            self.model.get_aparatos(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_aparatos(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '5':
-            self.model.get_nome_jogo(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_nome_jogo(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '6':
-            self.model.get_num_jogadores_partida(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_num_jogadores_partida(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '7':
-            self.model.get_objetivos_jogo(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_objetivos_jogo(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '8':
-            self.model.get_vencedor_partida(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_vencedor_partida(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '9':
-            self.model.get_maior_vencedor(self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_maior_vencedor(self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         elif option == '10':    
-            self.model.get_partidas_jogo(str(inputa), self.g)
+            self.window.listWidget.clear()
+            res = self.model.get_partidas_jogo(str(inputa), self.g)
+            for item in res:
+                self.window.listWidget.addItem(item[0].toPython())
             
         self.window.lineEdit.setEnabled(True)
         self.window.lineEdit.setText('')
-        #self.model.get_regras_jogo(str(inputa), self.g)
         
 
     def load_gui(self):
